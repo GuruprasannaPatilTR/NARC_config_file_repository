@@ -1,0 +1,111 @@
+<NARCConfig>
+  <Parms TextPrefixSize="20" DefaultDuplicateEventKey="requestId" ServerEventKey="novusid" /> 
+  <DuplicateEventKey EventKey="eventId" ForKey="application" ForValue="SearchEngine" /> 
+<ScalingFactors Count="0.6" Unique="0.5" ErrorRate="0.4" ClientCount="0.25" Previous="0.4" NotFound="0.66" DefaultForKey="0.1">
+  <ScalingFactorKey Key="application" Factor="0.4" /> 
+  <ScalingFactorKey Key="machine" Factor="1.0" /> 
+  <ScalingFactorKey Key="switch" Factor="1.0" /> 
+  <ScalingFactorKey Key="domain" Factor="1.0" /> 
+  <ScalingFactorKey Key="novusid" Factor="1.0" /> 
+  <ScalingFactorKey Key="database" Factor="1.0" /> 
+  <ScalingFactorKey Key="partition" Factor="1.2" /> 
+  <ScalingFactorKey Key="targetdomain" Factor="1.1" /> 
+  </ScalingFactors>
+  <IncludedEvent KeyValue="errorResponse" ErrorKey="true" /> 
+  <IncludedEvent KeyValue="exception" ErrorKey="false" /> 
+  <IncludedEvent KeyValue="SqlException" ErrorKey="false" /> 
+  <TextPrefixKey Key="text" /> 
+  <TextPrefixKey Key="stacktrace" /> 
+  <ExcludedKey Key="date" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="timestamp" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="environment" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="apiVersion" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="eventid" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="userid" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="requestid" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="eventlevel" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="submittimestamp" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="eventguid" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="PIT" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="RootId" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="responseRead" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="request" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="requestTime" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="successfulreqs" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="totalreqs" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="buildertype" ExcludeForWeightCalcOnly="false" /> 
+  <ExcludedKey Key="messageType" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="thread" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="stacktrace" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="errorKey" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="text" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="command" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="partner" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="product" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="key" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedKey Key="DuplicateEventCount" ExcludeForWeightCalcOnly="true" /> 
+  <ExcludedEvent Key="eventlevel" Value="status" RegularExpressions="false" /> 
+  <ExcludedEvent Key="key" Value="IndexLoader.startLoad" RegularExpressions="false" /> 
+  <ExcludedEvent Key="key" Value="SearchClient.setMaxSearchRequestCounter" RegularExpressions="false" /> 
+  <ExcludedEvent Key="key" Value="SearchClient.setMessegeClientTimeout" RegularExpressions="false" /> 
+  <ExcludedEvent Key="text" Value="Error reading CCI for the Collection Set Stage for collection set = (\S*) and" RegularExpressions="true" CheckFunction="com.westgroup.novus.narc.IsNotValidCollectionSet, match(1)" /> 
+  <ExcludedEvent Key="stacktrace" Value="Error reading CCI for the Collection Set Stage for collection set = (\S*) and" RegularExpressions="true" CheckFunction="com.westgroup.novus.narc.IsNotValidCollectionSet, match(1)" /> 
+  <ExcludedEvent Key="command" Value="UnsolicitedConfigurationRequest" RegularExpressions="false" /> 
+  <ExcludedEvent Key="text" Value=".*?Query Concept request = wlnv_bsv.*?" RegularExpressions="true" /> 
+  <ExcludedEvent Key="text" Value=".*? MSG101" RegularExpressions="true" /> 
+  <ExcludedEvent Key="request" Value="retrieveMetadata" RegularExpressions="false" /> 
+  <ExcludedEvent Key="text" Value="Request to GetCurrentRAndFStages had exception: Record not found:.*?" RegularExpressions="true" /> 
+  <ExcludedEvent Key="errorKey" Value="MSG101" RegularExpressions="false" /> 
+  <ExcludedEvent Key="errorKey" Value="EXTRACT001" RegularExpressions="false" />
+  <ExcludedEvent Key="machine" Value="maple.westlan.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="maple" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="ns0175-04.westlan.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="ns0175-04" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="raven.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="raven" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="mizu.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="mizu" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="bigboy.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="bigboy" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="gentoo.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="gentoo" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="mack.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="mack" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-09.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-09" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-10.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-10" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-11.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-11" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-12.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-12" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-13.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-13" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-01.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-01" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-02.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-02" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-03.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-03" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-04.int.westgroup.com" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="harvey-04" RegularExpressions="false" /> 
+  <ExcludedEvent Key="text" Value=".*?com.westgroup.novus.messenger.MiddlewareRetryableException.*?" RegularExpressions="true" /> 
+  <ExcludedEvent Key="command" Value="SLIMLoadRequest" RegularExpressions="false" /> 
+  <ExcludedEvent Key="product" Value="KC_MIGRATION_DATA_AUDITOR" RegularExpressions="false" /> 
+  <ExcludedEvent Key="text" Value="Middleware component configuration lookup error : API: slim is not mapped to a Novus queue in the configuration repository for request.*?" RegularExpressions="true" /> 
+  <ExcludedEvent Key="product" Value="WESTLAWNEXT-CI" RegularExpressions="false" /> 
+  <ExcludedEvent Key="text" Value="Invalid text string.*?Text must contain at least.*?" RegularExpressions="true"></ExcludedEvent>
+  <ExcludedEvent Key="text" Value=".*?com.westgroup.novus.persist.PersistObjectNotFoundException.*?" RegularExpressions="true"></ExcludedEvent>
+  <UpdateEvent Key="text" Value=".*?cci.*?" RegularExpressions="true" NewKey="database" NewValue="cci" /> 
+  <UpdateEvent Key="text" Value=".*?persist.*?" RegularExpressions="true" NewKey="database" NewValue="persist" /> 
+  <UpdateEvent Key="dburl" Value="\S+" RegularExpressions="true" NewKey="database" AddFunction="com.westgroup.novus.narc.AddDatabaseFromUrl,match(0)" /> 
+  <UpdateEvent Key="machine" Value="\S+" RegularExpressions="true" AddFunction="com.westgroup.novus.narc.LookupMachineInCIR,match(0)" /> 
+  <UpdateEvent Key="product" Value="\S+" RegularExpressions="true" AddFunction="com.westgroup.novus.narc.Substitute,partner,match(0)" /> 
+  <UpdateEvent Key="product" Value="DJ\S+" RegularExpressions="true" NewKey="partner" NewValue="Westlaw BIN" /> 
+  <UpdateEvent Key="product" Value="N[-_]\S+" RegularExpressions="true" NewKey="partner" NewValue="Westlaw Public Records" /> 
+  <UpdateEvent Key="outstanding" Value="\S+" RegularExpressions="true" AddFunction="com.westgroup.novus.narc.GetTargetInfoForIndexSet,value(domain),value(site),match(0)" /> 
+  <ExcludedEvent Key="product" Value="WESTLAWNEXT-LOCAL" RegularExpressions="false" /> 
+  <ExcludedEvent Key="machine" Value="c555efrlsasqe" RegularExpressions="false" />
+  <ExcludedEvent Key="machine" Value="c763fpklsasqe" RegularExpressions="false" />
+  <ExcludedEvent Key="text" Value="Exception class java.lang.Exception occurred attempting to make request.*?Thread was interrupted while waiting for a response.*?" RegularExpressions="true"></ExcludedEvent>
+</NARCConfig>
